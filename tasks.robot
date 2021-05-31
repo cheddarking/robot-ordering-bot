@@ -19,7 +19,7 @@ Library           RPA.RobotLogListener
 # +
 *** Variables ***
 
-${GLOBAL_RETRY_AMOUNT}    3x
+${GLOBAL_RETRY_AMOUNT}    5x
 ${GLOBAL_RETRY_INTERVAL}    0.5s
 ${OUTPUT_DIRECTORY}=    ${CURDIR}${/}output
 ${CSV_URL}
