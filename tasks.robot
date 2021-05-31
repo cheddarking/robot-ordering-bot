@@ -12,6 +12,7 @@ Library           RPA.PDF
 Library           RPA.Archive
 Library           RPA.Dialogs
 Library           RPA.Robocloud.Secrets
+Library           RPA.RobotLogListener
 
 
 
@@ -50,7 +51,7 @@ Get the ordering website link from the vault
     ${secret}=    Get Secret    order-website
     # Note: in real robots, you should not print secrets to the log. this is just for demonstration purposes :)
     [Return]    ${secret}[url]
-   
+
 
 *** Keywords ***
 Open The Ordering Website
@@ -106,6 +107,7 @@ Place The Orders Using The Data From The Orders File
         Fill The Order For One Item     ${order}
         Capture a screenshot of the robot    ${order}
         #Submit The Order
+        Mute Run On Failure    Submit The Order
         Wait Until Keyword Succeeds   ${GLOBAL_RETRY_AMOUNT}    ${GLOBAL_RETRY_INTERVAL}    Submit The Order
         Export The Receipt As A PDF And Append the screenshot to it    ${order}
         Order Next Robot
