@@ -60,7 +60,7 @@ Open The Ordering Website
 
 *** Keywords ***
 Get rid of the pop up message
-    Click Button    OK
+    Click Button    xpath://*[@id="root"]/div/div[2]/div/div/div/div/div/button[1]
 
 *** Keywords ***
 Fill The Order For One Item
