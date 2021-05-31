@@ -48,7 +48,7 @@ Get Link from User and Download The Orders CSV file
 
 *** Keywords ***
 Get the ordering website link from the vault
-    ${secret}=    Get Secret    order-website
+    ${secret}=    Get Secret    orderwebsite
     # Note: in real robots, you should not print secrets to the log. this is just for demonstration purposes :)
     [Return]    ${secret}[url]
 
